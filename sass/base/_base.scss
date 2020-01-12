@@ -1,0 +1,19 @@
+/************************************************
+  Common styles / Components
+*************************************************/
+
+/* --------------- Typography --------------- */
+
+body {
+  color: $shadow-gray;
+  font-family: 'Lato', sans-serif;
+}
+
+/* --------------- Links --------------- */
+
+a {
+  &:hover {
+    text-decoration: none;
+    transition: .4s;
+  }
+}

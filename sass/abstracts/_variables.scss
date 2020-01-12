@@ -1,0 +1,28 @@
+/************************************
+  Variables
+************************************/
+
+/* --------------- Colors --------------- */
+
+$dark-cyan: #006589;
+$shadow-gray: #505050;
+$iron-gray: #404040;
+
+/* --------------- Grid containers --------------- */
+
+$base-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+$min-side-width: 15px;
+
+$side-widths: (
+  xs: $min-side-width,
+  sm: calc((100% - #{map-get($base-widths, sm)}) / 2 + #{$min-side-width}),
+  md: calc((100% - #{map-get($base-widths, md)}) / 2 + #{$min-side-width}),
+  lg: calc((100% - #{map-get($base-widths, lg)}) / 2 + #{$min-side-width}),
+  xl: calc((100% - #{map-get($base-widths, xl)}) / 2 + #{$min-side-width})
+);

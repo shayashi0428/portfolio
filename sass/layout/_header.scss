@@ -1,0 +1,79 @@
+/************************************
+  Header
+************************************/
+
+.navbar {
+  padding: 1.125rem 2rem;
+}
+
+.nav-toggle {
+  position: relative;
+  z-index: 10;
+  @include links(transparent, light);
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 6px 0;
+    background-color: $iron-gray;
+    transition: .4s;
+  }
+}
+
+// .screen-overlay {
+//   @include position(absolute, 0, 0);
+// }
+
+.main-nav {
+  @include position(absolute, 0, 0);
+  width: 80%;
+  max-width: 18.5rem;
+  height: 100vh;
+  padding: 6.25rem 4rem;
+  background-color: $dark-cyan;
+  transform: translateX(-100%);
+  transition: .6s;
+}
+
+.nav-menu-links {
+  li {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    a {
+      @include links($white, light);
+    }
+  }
+}
+
+.nav-active {
+  .nav-toggle {
+    span {
+      background-color: $white;
+
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5.75px, 5.75px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(5.75px, -5.75px);
+      }
+    }
+  }
+
+  // .screen-overlay {
+  //   width: 100vw;
+  //   height: 100vh;
+  // }
+
+  .main-nav {
+    transform: translateX(0);
+  }
+}
