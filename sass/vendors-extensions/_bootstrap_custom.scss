@@ -10,9 +10,13 @@
 /* ------- begin customization -------- */
 $theme-colors: (
   dark-cyan: $dark-cyan,
+  iron-gray: $iron-gray,
   shadow-gray: $shadow-gray,
-  iron-gray: $iron-gray
+  light-gray: $light-gray,
+  whitesmoke: $whitesmoke
 );
+
+$enable-gradients: true;
 
 /* ------- end customization -------- */
 // import Bootstrap to set the changes

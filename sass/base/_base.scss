@@ -17,3 +17,32 @@ a {
     transition: .4s;
   }
 }
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  @include font-style(null, 1.25rem, bold);
+  @include links($dark-cyan, dark);
+
+  span {
+    display: inline-block;
+    width: 1.5rem;
+    height: 0.125rem;
+    margin-right: 0.5rem;
+    @include links($dark-cyan, dark, background-color);
+    @extend .stretched-link;
+    transition: .4s;
+  }
+}
+
+/* --------------- Images --------------- */
+
+.img-wh100 {
+  @include imgs;
+}
+
+
+
+
+

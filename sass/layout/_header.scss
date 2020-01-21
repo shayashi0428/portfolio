@@ -3,7 +3,11 @@
 ************************************/
 
 .navbar {
-  padding: 1.125rem 2rem;
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  padding: $navbar-px 2rem;
+  background-color: $white;
 }
 
 .nav-toggle {

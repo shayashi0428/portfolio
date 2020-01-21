@@ -2,7 +2,7 @@
   Mixins
 ************************************/
 
-@mixin grid-columns($main-col: repeat(12, 1fr), $breakpoint-from: xs, $breakpoint-to: xl) {
+@mixin grid-columns($main-col: repeat(12, 1fr), $breakpoint-from: xs, $breakpoint-to: xl, $firstline-name: null, $endline-name: null) {
   $breakpoint-from-index: index(($side-widths), ($breakpoint-from map-get($side-widths, $breakpoint-from)));
   $breakpoint-to-index: index(($side-widths), ($breakpoint-to map-get($side-widths, $breakpoint-to)));
 
@@ -11,14 +11,32 @@
     $side-width: nth(map-values($side-widths), $i);
 
     @if $i == 1 { // index 1 = xs
-      grid-template-columns: $side-width $main-col $side-width;
+      grid-template-columns: $firstline-name $side-width $main-col $side-width $endline-name;
     } @else {
       @include media-breakpoint-up($breakpoint) {
-        grid-template-columns: $side-width $main-col $side-width;
+        grid-template-columns: $firstline-name $side-width $main-col $side-width $endline-name;
       }
     }
   }
 }
+
+// @mixin grid-columns($main-col: repeat(12, 1fr), $breakpoint-from: xs, $breakpoint-to: xl) {
+//   $breakpoint-from-index: index(($side-widths), ($breakpoint-from map-get($side-widths, $breakpoint-from)));
+//   $breakpoint-to-index: index(($side-widths), ($breakpoint-to map-get($side-widths, $breakpoint-to)));
+
+//   @for $i from $breakpoint-from-index through $breakpoint-to-index {
+//     $breakpoint: nth(map-keys($side-widths), $i);
+//     $side-width: nth(map-values($side-widths), $i);
+
+//     @if $i == 1 { // index 1 = xs
+//       grid-template-columns: $side-width $main-col $side-width;
+//     } @else {
+//       @include media-breakpoint-up($breakpoint) {
+//         grid-template-columns: $side-width $main-col $side-width;
+//       }
+//     }
+//   }
+// }
 
 @mixin position($position: relative, $top: null, $left: null, $right: null, $bottom: null) {
   position: $position;
@@ -26,6 +44,13 @@
   left: $left;
   right: $right;
   bottom: $bottom;
+}
+
+@mixin font-style($color: null, $size: null, $weight: null, $mb: null) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  margin-bottom: $mb;
 }
 
 @mixin links($color: $iron-gray, $color-type: dark, $property: color) {
@@ -47,5 +72,26 @@
     &:active {
       opacity: 0.6;
     }    
+  }
+}
+
+@mixin imgs($width: 100%, $height: 100%, $object-fit: cover) {
+  width: $width;
+  height: $height;
+  object-fit: $object-fit
+}
+
+@mixin aspect-ratio($width: 16, $height: 9) {
+  position: relative;
+  width: 100%;
+
+  &::before {
+    display: block;
+    padding-top: ($height / $width) * 100%;
+    content: '';
+  }
+
+  > .content {
+    @include position(absolute, 0, 0, 0, 0)
   }
 }
