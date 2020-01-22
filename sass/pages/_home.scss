@@ -29,33 +29,30 @@
 
 /* -------------------- Hero area -------------------- */
 
-.hero-area {
-  display: grid;
-  grid-template-rows: $navbar-height [img-shadow-start] minmax(1.75rem, 1fr) [bg-img-start] 0.75fr [main-img-start] minmax(250px, 6fr) [sideline-start] 0.75fr [main-img-end] 1fr [bg-img-end] minmax(1.25rem, 0.75fr) [content-start] auto [content-end] minmax(1.75rem, 1fr) [img-shadow-end] minmax(1.75rem, 1fr) [sideline-end];
-  grid-template-columns: [bg-img-start] 1fr [content-start] 1fr [main-img-start] 1fr [img-shadow-start] 3fr [bg-img-end main-img-end content-end] 1fr [sideline-start] auto [sideline-end img-shadow-end];
-  grid-template-columns: [bg-img-start] 1fr [content-start main-img-start] 1fr [img-shadow-start] 3fr [bg-img-end main-img-end content-end] 1fr [sideline-start] auto [sideline-end img-shadow-end];
+.hero-wrapper {
   height: 100vh;
-  
-  @include media-breakpoint-up(md) {
-    grid-template-rows: $navbar-height [bg-img-start] minmax(2rem, 1fr) [img-shadow-start main-img-start sideline-start] minmax(1.5rem, 1fr) [content-start] auto [content-end] minmax(1.5rem, 1fr) [main-img-end] minmax(2rem, 1fr) [bg-img-end] minmax(2rem, 1fr) [img-shadow-end sideline-end];
-    grid-template-columns: [bg-img-start img-shadow-start] 1.75fr [main-img-start] 3.75fr [main-img-end] 0.25fr [bg-img-end] 0.5fr [img-shadow-end content-start] auto [content-end] 0.5fr [sideline-start] auto [img-shadow-end sideline-end];
-    max-height: 576px;
-  }
-  
-  @include media-breakpoint-up(lg) {
-    grid-template-columns: [bg-img-start img-shadow-start] 2fr [main-img-start] 3.75fr [main-img-end] 0.5fr [bg-img-end] 0.5fr [img-shadow-end content-start] auto [content-end] 0.5fr [sideline-start] auto [img-shadow-end sideline-end];
-    max-height: 768px;
+
+  @include media-breakpoint-between(xs, sm) {
+    min-height: 608px;
+    max-height: 848px;
   }
 
-  @include media-breakpoint-up(xl) {
-    grid-template-columns: [bg-img-start img-shadow-start] 4fr [main-img-start] 4fr [main-img-end] 1fr [bg-img-end] 1fr [img-shadow-end content-start] auto [content-end] 1fr [sideline-start] auto [img-shadow-end sideline-end];
-    max-height: none;
+  @include media-breakpoint-between(md, lg) {
+    @include aspect-ratio(768, 528);
+    max-height: 680px;
+    height: auto;
   }
 }
 
-.hero-img-shadow {
+.hero-area {
+  display: grid;
+  grid-template-rows: $navbar-height [img-shadow-start] 1fr [bg-img-start] 0.75fr [main-img-start] 5.5fr [sideline-start] 0.5fr [main-img-end] 0.75fr [bg-img-end] 0.75fr [content-start] auto [content-end] 1fr [img-shadow-end] 0.75fr [sideline-end];
+  grid-template-columns: [bg-img-start] 1fr [content-start main-img-start] 1fr [img-shadow-start] 3.25fr [bg-img-end main-img-end content-end] 0.75fr [sideline-start] auto [sideline-end img-shadow-end];
+  height: 100%;
+  
   @include media-breakpoint-up(md) {
-    width: 110%;
+    grid-template-rows: $navbar-height [bg-img-start] 1fr [img-shadow-start main-img-start sideline-start] 1.5fr [content-start] auto [content-end] 1.5fr [main-img-end] 0.5fr [bg-img-end] 1fr [img-shadow-end sideline-end];
+    grid-template-columns: [bg-img-start img-shadow-start] 3fr [main-img-start] 3.5fr [main-img-end] 1fr [bg-img-end] 0.5fr [content-start] 1fr [img-shadow-end] 2.5fr [content-end sideline-start] auto [sideline-end];
   }
 }
 
@@ -75,7 +72,13 @@
 
 .hero-img-container {
   grid-area: main-img;
+  justify-self: center;
   z-index: 10;
+  max-width: 19.5rem;
+
+  @include media-breakpoint-up(xl) {
+    max-width: 20.5rem;
+  }
 
   .hero-img {
     @include imgs($object-fit: contain);
@@ -89,7 +92,7 @@
     @include font-style($iron-gray, 2.5rem, bold, 0.625rem);
 
     @include media-breakpoint-up(md) {
-      @include font-style($iron-gray, 3.25rem, bold, 1.25rem);
+      @include font-style($iron-gray, 6.25vw, bold, 0.625rem);
     }
 
     @include media-breakpoint-up(lg) {
@@ -97,7 +100,7 @@
     }
 
     @include media-breakpoint-up(xl) {
-      @include font-style($iron-gray ,4.5rem, bold, 1.25rem);
+      @include font-style($iron-gray, 4.5rem, bold, 1.25rem);
     }
   
     span {
@@ -105,10 +108,14 @@
       @include font-style($size: 1.75rem, $mb: 0.5rem);
 
       @include media-breakpoint-up(md) {
-        @include font-style($size: 2.25rem, $mb: 1rem);
+        @include font-style($size: 2rem, $mb: 0.5rem);
       }
 
       @include media-breakpoint-up(lg) {
+        @include font-style($size: 2.5rem, $mb: 1rem);
+      }
+
+      @include media-breakpoint-up(xl) {
         @include font-style($size: 3rem, $mb: 1rem);
       }
     }
@@ -124,7 +131,7 @@
     @include font-style($size: 1rem, $mb: 1rem);
     
     @include media-breakpoint-up(md) {
-      @include font-style($size: 1.25rem, $mb: 2rem);
+      @include font-style($size: 1.125rem, $mb: 1rem);
     }
     
     @include media-breakpoint-up(lg) {
@@ -138,7 +145,7 @@
     border-radius: 0;
     
     @include media-breakpoint-down(sm) {
-      padding: 0.875rem;
+      padding: 0.75rem;
       font-size: 0.875rem;
     }
   }
@@ -151,6 +158,10 @@
   background-image: linear-gradient(#73BAD3, #0D3353);
   
   @include media-breakpoint-up(md) {
+    width: 1.25rem;
+  }
+
+  @include media-breakpoint-up(lg) {
     width: 1.5rem;
   }
 }
@@ -221,7 +232,6 @@
     background-color: rgba(255, 255, 255, 0.1);
     content: '';
   }
-
 }
 
 .personal-skills {
@@ -246,7 +256,6 @@
   @include media-breakpoint-up(lg) {
     position: static;    
   }
-
 
   .skill-wrap {
     &:not(:last-child) {
@@ -360,6 +369,7 @@
 
 .portfolio-content {
   grid-area: content;
+
   @include media-breakpoint-up(md) {
     padding: 0 2rem;
   }
@@ -370,6 +380,7 @@
   z-index: 10;
   max-width: 20rem;
   @include font-style(null, 1.5rem, bold, 2rem);
+
   @include media-breakpoint-up(md) {
     @include font-style(null, 1.75rem, bold, 2rem);
   }
@@ -516,7 +527,6 @@
   .portfolio-img-container {
     align-self: start;
     box-shadow: -0.5rem 0.5rem 3rem #00000029;
-
   }
 }
 
