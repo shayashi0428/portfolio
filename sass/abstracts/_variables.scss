@@ -11,6 +11,10 @@ $shadow-gray: #505050;
 $light-gray: #F0F0F0;
 $whitesmoke: #F5F5F5;
 
+/* --------------- Box shadow --------------- */
+
+$box-shadow: 0.5rem 0.5rem 3rem #00000029;
+
 /* --------------- Grid layouts --------------- */
 
 $base-widths: (
@@ -50,6 +54,7 @@ $navbar-height: calc(30px + #{$navbar-px} * 2);
 $section-spacer: 8rem;
 $section-title-mb: 4rem;
 
-/* --------------- Box shadow --------------- */
+/* --------------- Transition --------------- */
 
-$box-shadow: 0.5rem 0.5rem 3rem #00000029;
+$btn-transition: .3s;
+$link-transition: .4s;

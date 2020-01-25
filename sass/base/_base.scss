@@ -11,10 +11,11 @@ body {
 
 /* --------------- Links --------------- */
 
-a {
+a {  
+  transition: $link-transition;
+
   &:hover {
     text-decoration: none;
-    transition: .4s;
   }
 }
 
@@ -32,7 +33,7 @@ a {
     margin-right: 0.5rem;
     @include links($dark-cyan, dark, background-color);
     @extend .stretched-link;
-    transition: .4s;
+    transition: $link-transition;
   }
 }
 
@@ -41,6 +42,41 @@ a {
 .img-wh100 {
   @include imgs;
 }
+
+/* --------------- Animation --------------- */
+
+.fadeinX {
+  animation: fadeinX .8s forwards;
+}
+
+.fadeinY {
+  animation: fadeinY .8s forwards;
+}
+
+@keyframes fadeinX {
+  from {
+    opacity: 0;
+    transform: translateX(20px)
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeinY {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 
 
 

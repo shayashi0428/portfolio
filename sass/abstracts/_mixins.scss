@@ -20,24 +20,6 @@
   }
 }
 
-// @mixin grid-columns($main-col: repeat(12, 1fr), $breakpoint-from: xs, $breakpoint-to: xl) {
-//   $breakpoint-from-index: index(($side-widths), ($breakpoint-from map-get($side-widths, $breakpoint-from)));
-//   $breakpoint-to-index: index(($side-widths), ($breakpoint-to map-get($side-widths, $breakpoint-to)));
-
-//   @for $i from $breakpoint-from-index through $breakpoint-to-index {
-//     $breakpoint: nth(map-keys($side-widths), $i);
-//     $side-width: nth(map-values($side-widths), $i);
-
-//     @if $i == 1 { // index 1 = xs
-//       grid-template-columns: $side-width $main-col $side-width;
-//     } @else {
-//       @include media-breakpoint-up($breakpoint) {
-//         grid-template-columns: $side-width $main-col $side-width;
-//       }
-//     }
-//   }
-// }
-
 @mixin position($position: relative, $top: null, $left: null, $right: null, $bottom: null) {
   position: $position;
   top: $top;

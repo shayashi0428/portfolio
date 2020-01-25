@@ -20,20 +20,20 @@
           <span></span>
           <span></span>
         </div>
-        <!-- <div id="screen-overlay" class="screen-overlay"></div> -->
+        <div id="screen-overlay" class="screen-overlay"></div>
         <div id="slide-nav" class="main-nav">
-          <ul class="nav-menu-links list-unstyled">
+          <ul id="nav-menu-links" class="nav-menu-links list-unstyled">
             <li>
               <a href="#">HOME</a>
             </li>
             <li>
-              <a href="#">ABOUT</a>
+              <a href="#about">ABOUT</a>
             </li>
             <li>
-              <a href="#">PORTFOLIO</a>
+              <a href="#portfolio">PORTFOLIO</a>
             </li>
             <li>
-              <a href="#">CONTACT</a>
+              <a href="#contact">CONTACT</a>
             </li>
           </ul>
         </div>
@@ -45,10 +45,10 @@
         <div class="hero-area content">
           <div class="hero-img-shadow img-shadow"></div>
           <div class="hero-bg-img"></div>
-          <div class="hero-img-container">
+          <div id="hero-img" class="hero-img-container">
             <img src="img/capybara.png" alt="capybara" class="hero-img">
           </div>
-          <div class="hero-content">
+          <div id="hero-content" class="hero-content">
             <h1 class="hero-title"><span>Hello, I'm</span>SACHIE <br>HAYASHI</h1>
             <p class="hero-sub-title">Front End Web Developer</p>
             <button type="button" class="btn btn-outline-dark-cyan">SEE PORTFOLIO</button>
@@ -58,7 +58,7 @@
       </div>
     <!-- -------------------- About -------------------- -->
       <section>
-        <div class="about section-wrap">
+        <div id="about" class="about section-wrap">
           <h2 class="section-title mb-0">ABOUT ME</h2>
           <p class="section-description about-description">I'm a front end web developer from Japan and now living in Vancouver, Canada. I started learning web development in the beginning of 2019, and now I have the following skills.</p>
           <div class="section-img about-img-container">
@@ -69,37 +69,42 @@
           <div class="personal-skills">
             <div class="skill-wrap">
               <span class="skill-title">HTML & CSS</span>
-              <span class="skill-value">75%</span>
+              <span class="skill-value" style="left: 75%">75%</span>
               <div class="progress">
-                <div class="progress-bar" style="max-width: 75%;"></div>
+                <div class="progress-bar" style="max-width: 75%;">
+                </div>
               </div>
             </div>
             <div class="skill-wrap">
               <span class="skill-title">Sass</span>
-              <span class="skill-value">70%</span>
+              <span class="skill-value" style="left: 70%">70%</span>
               <div class="progress">
-                <div class="progress-bar" style="max-width: 70%;"></div>
+                <div class="progress-bar" style="max-width: 70%;">
+                </div>
               </div>
             </div>
             <div class="skill-wrap">
               <span class="skill-title">JavaScript</span>
-              <span class="skill-value">60%</span>
+              <span class="skill-value" style="left: 60%">60%</span>
               <div class="progress">
-                <div class="progress-bar" style="max-width: 60%;"></div>
+                <div class="progress-bar" style="max-width: 60%;">
+                </div>
               </div>
             </div>
             <div class="skill-wrap">
               <span class="skill-title">PHP</span>
-              <span class="skill-value">50%</span>
+              <span class="skill-value" style="left: 50%">50%</span>
               <div class="progress">
-                <div class="progress-bar" style="max-width: 50%;"></div>
+                <div class="progress-bar" style="max-width: 50%;">
+                </div>
               </div>
             </div>
             <div class="skill-wrap">
               <span class="skill-title">Web Design</span>
-              <span class="skill-value">40%</span>
+              <span class="skill-value" style="left: 40%">40%</span>
               <div class="progress">
-                <div class="progress-bar" style="max-width: 40%;"></div>
+                <div class="progress-bar" style="max-width: 40%;">
+                </div>
               </div>
             </div>
           </div>
@@ -107,7 +112,7 @@
       </section>
     <!-- -------------------- Services -------------------- -->
       <section>
-        <div class="services">
+        <div id="services" class="services">
           <div class="bg-gradient"></div>
           <div class="dot-pattern dot-pattern-lg"></div>
           <div class="dot-pattern dot-pattern-sm"></div>
@@ -138,13 +143,13 @@
       </section>
     <!-- -------------------- Portfolio -------------------- -->
       <section>
-        <div class="portfolio section-wrap">
+        <div id="portfolio" class="portfolio section-wrap">
           <h2 class="section-title text-center">PORTFOLIO</h2>
           <div class="portfolio-container">
             <!-- --------------- Custom WordPress theme --------------- -->
             <div class="portfolio-item custom-wp-theme">
               <div class="img-shadow"></div>
-              <h3 class="portfolio-title"><a href="">MY FIRST CUSTOM WORDPRESS THEME</a></h3>
+              <h3 class="portfolio-title"><a href="#">MY FIRST CUSTOM WORDPRESS THEME</a></h3>
               <p class="portfolio-description">This is the first custom WordPress theme I built from scratch. It's fully responsive, so it looks and works great on all devices.</p>
               <a href="#" class="link demo-link"><span></span>DEMO</a>
               <div class="portfolio-img-container">
@@ -202,7 +207,7 @@
       </section>
     <!-- -------------------- Contact -------------------- -->
       <section>
-        <div class="contact section-wrap">
+        <div id="contact" class="contact section-wrap">
           <div class="container">
             <h2 class="section-title text-center">CONTACT ME</h2>
             <div class="contact-form-wrap">
