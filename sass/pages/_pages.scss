@@ -1,0 +1,51 @@
+/******************************************************
+  Pages - body
+*******************************************************/
+
+.entry-grid {
+  display: grid;
+  grid-template-columns: 0 1fr 0;
+  grid-template-areas: 
+  ". title   ."
+  ". img     ."
+  ". content .";
+  
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr 6fr 1fr;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    overflow: auto;
+  }
+}
+
+.entry-title {
+  grid-area: title;
+  @include font-style($iron-gray, 2.25rem, bold, 1.5rem);
+
+  @include media-breakpoint-up(md) {
+    @include font-style($iron-gray, 2.5rem, bold, 1.5rem);
+  }
+}
+
+.entry-thumbnail {
+  grid-area: img;
+  align-self: start;
+  @include aspect-ratio(8, 5);
+  margin-bottom: 1.5rem;
+
+  @include media-breakpoint-up(lg) {
+    float: right;
+    width: 48%;
+    margin-left: 1.5rem;
+  }
+
+  img {
+    @include imgs($object-fit: cover);
+  }
+}
+
+.entry-content {
+  grid-area: content;
+}

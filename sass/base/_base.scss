@@ -43,6 +43,13 @@ a {
   @include imgs;
 }
 
+/* --------------- Page layouts --------------- */
+
+.page-wrap {
+  padding: calc(#{$navbar-height} + 2.5rem) 0 4.5rem;
+}
+
+
 /* --------------- Animation --------------- */
 
 .fadeinX {

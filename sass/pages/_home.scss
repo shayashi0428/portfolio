@@ -432,19 +432,12 @@
   opacity: 0;
 }
 
-.portfolio-content {
-  grid-area: content;
-
-  @include media-breakpoint-up(md) {
-    padding: 0 2rem;
-  }
-}
-
 .portfolio-title {
   grid-area: title;
   z-index: 10;
   max-width: 20rem;
   @include font-style(null, 1.5rem, bold, 2rem);
+  text-transform: uppercase;
 
   @include media-breakpoint-up(md) {
     @include font-style(null, 1.75rem, bold, 2rem);
