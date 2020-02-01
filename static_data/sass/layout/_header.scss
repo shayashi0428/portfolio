@@ -1,0 +1,90 @@
+/************************************
+  Header
+************************************/
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  padding: $navbar-px 2rem;
+  background-color: $white;
+}
+
+.nav-toggle {
+  position: relative;
+  z-index: 10;
+  @include links(transparent, light);
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 6px 0;
+    background-color: $iron-gray;
+    transition: .4s;
+  }
+}
+
+.screen-overlay {
+  @include position(absolute, 0, 0);
+}
+
+.main-nav {
+  @include position(absolute, 0, 0);
+  width: 80%;
+  max-width: 20rem;
+  height: 100vh;
+  padding: 6.25rem 4rem;
+  background-color: $dark-cyan;
+  transform: translateX(-100%);
+  transition: .6s;
+}
+
+.nav-menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  li {
+    display: inline-block;
+    line-height: 1.0;
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    a {
+      @include links($white, light);
+    }
+  }
+}
+
+.nav-active {
+  .nav-toggle {
+    span {
+      background-color: $white;
+
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5.75px, 5.75px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(5.75px, -5.75px);
+      }
+    }
+  }
+
+  .screen-overlay {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .main-nav {
+    transform: translateX(0);
+  }
+}

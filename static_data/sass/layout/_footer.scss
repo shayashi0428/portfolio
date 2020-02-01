@@ -1,0 +1,40 @@
+/************************************************
+  Footer
+*************************************************/
+
+footer {
+  padding: 1rem 0;
+  background-color: $dark-navy;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.copyright {
+  p {
+    margin: 0;
+
+    @include media-breakpoint-up(sm) {
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+.social-icons {
+  display: flex;
+  margin: 0;
+
+  li {
+    margin-left: 0.75rem;
+
+    a {
+      font-size: 1.5rem;
+      @include links($white, light);
+    }
+  }
+}

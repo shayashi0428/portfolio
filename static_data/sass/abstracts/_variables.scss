@@ -1,0 +1,60 @@
+/************************************
+  Variables
+************************************/
+
+/* --------------- Colors --------------- */
+
+$dark-cyan: #006589;
+$dark-navy: #1B2733;
+$iron-gray: #404040;
+$shadow-gray: #505050;
+$light-gray: #F0F0F0;
+$whitesmoke: #F5F5F5;
+
+/* --------------- Box shadow --------------- */
+
+$box-shadow: 0.5rem 0.5rem 3rem #00000029;
+
+/* --------------- Grid layouts --------------- */
+
+$base-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+$min-side-width: 15px;
+
+$side-widths: (
+  xs: $min-side-width,
+  sm: calc((100% - #{map-get($base-widths, sm)}) / 2 + #{$min-side-width}),
+  md: calc((100% - #{map-get($base-widths, md)}) / 2 + #{$min-side-width}),
+  lg: calc((100% - #{map-get($base-widths, lg)}) / 2 + #{$min-side-width}),
+  xl: calc((100% - #{map-get($base-widths, xl)}) / 2 + #{$min-side-width})
+);
+
+// Grid template rows
+$content: [title-start] auto [title-end description-start] auto [description-end link-start] auto [link-end];
+$content-wo-title: [description-start] auto [description-end link-start] auto [link-end];
+
+// Grid line names
+$content-start: title-start description-start link-start;
+$content-end: title-end description-end link-end;
+$content-wo-title-start: description-start link-start;
+$content-wo-title-end: description-end link-end;
+
+/* --------------- Header navigation --------------- */
+
+$navbar-px: 1rem;
+$navbar-height: calc(30px + #{$navbar-px} * 2);
+
+/* --------------- Spacing --------------- */
+
+$section-spacer: 8rem;
+$section-title-mb: 4rem;
+
+/* --------------- Transition --------------- */
+
+$btn-transition: .3s;
+$link-transition: .4s;

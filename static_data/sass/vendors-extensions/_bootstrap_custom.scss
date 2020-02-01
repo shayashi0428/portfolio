@@ -1,0 +1,34 @@
+/************************************
+  Bootstrap customization
+************************************/
+
+/*----------------------------------
+  Sass customization
+-----------------------------------*/
+
+/* ------- import only the necessary Bootstrap files ------- */
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+/* ------- begin customization -------- */
+$theme-colors: (
+  dark-cyan: $dark-cyan,
+  iron-gray: $iron-gray,
+  shadow-gray: $shadow-gray,
+  light-gray: $light-gray,
+  whitesmoke: $whitesmoke
+);
+
+/* ------- end customization -------- */
+// import Bootstrap to set the changes
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+/*----------------------------------
+  CSS overrides
+-----------------------------------*/
+
+.btn {
+  transition: color $btn-transition ease-in-out, background-color $btn-transition ease-in-out, border-color $btn-transition ease-in-out, box-shadow $btn-transition ease-in-out, -webkit-box-shadow $btn-transition ease-in-out;
+}
