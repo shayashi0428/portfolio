@@ -1,7 +1,15 @@
 'use strict';
 
-$(function() {
+/* ---------------- Hero area ---------------- */
+$(window).on('load', function() {
+  $('#hero-content').children().each(function(index) {
+    $(this).addClass('fadeinX').css('animation-delay', `${index / 8}s`);
+  });
+  
+  $('#hero-img').addClass('fadeinX');
+});
 
+$(function() {
   /* ---------------- Navigation ---------------- */
 
   // Toggle navigation
@@ -18,14 +26,6 @@ $(function() {
       }, 800);
     }
   });
-  
-  /* ---------------- Hero area ---------------- */
-  
-  $('#hero-content').children().each(function(index) {
-    $(this).addClass('fadeinX').css('animation-delay', `${index / 8}s`);
-  });
-  
-  $('#hero-img').addClass('fadeinX');  
 
   /* ---------------- Progress bars ---------------- */
 

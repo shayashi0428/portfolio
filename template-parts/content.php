@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts / pages
+ * Template part for displaying content of posts / pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -20,10 +20,11 @@
         $thumbnail_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
         $post_title = get_the_title();
         $alt_text = $thumbnail_alt == '' ? $post_title : $thumbnail_alt;
-        the_post_thumbnail('post-thumbnail', array(
+        $attr = array(
           'title' => esc_attr($post_title),
           'alt' => esc_attr($alt_text)
-        ));
+        );
+        the_post_thumbnail('post-thumbnail', $attr);
         ?>
       </div>
     </div>

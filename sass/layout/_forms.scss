@@ -6,6 +6,8 @@ input, textarea {
   @extend .form-control;
 }
 
+/* -------------------- Contact Form -------------------- */
+
 .contact-form {
   display: grid;
   grid-row-gap: 1.25rem;
@@ -16,8 +18,41 @@ input, textarea {
     grid-column-gap: 0.625rem;
   }
 
-  button[type="submit"] {
+  button[type="submit"], input[type="submit"] {
     width: 52%;
     margin: 0 auto;
   }
+}
+
+// ---------- Contact Form 7 ---------- //
+
+input, textarea {
+  &.wpcf7-not-valid {
+    border: solid 1px $error-red;
+  }
+}
+
+div {
+  &.wpcf7-response-output {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1.125rem;
+  }
+
+  &.wpcf7-validation-errors {
+    color: $error-red;
+  }
+
+  &.wpcf7-mail-sent-ok {
+    color: $success-green;
+  }
+
+  &.wpcf7-mail-sent-ng {
+    color: $error-red;
+  }
+
+  &.wpcf7-spam-blocked {
+    color: $warning-orange;
+  }  
 }

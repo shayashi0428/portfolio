@@ -11716,8 +11716,8 @@ a:hover {
 
 /* --------------- Animation --------------- */
 .fadeinX {
-  -webkit-animation: fadeinX .8s forwards;
-          animation: fadeinX .8s forwards;
+  -webkit-animation: fadeinX 1s forwards;
+          animation: fadeinX 1s forwards;
 }
 
 .fadeinY {
@@ -11951,6 +11951,7 @@ footer {
 /************************************************
   Forms
 *************************************************/
+/* -------------------- Contact Form -------------------- */
 .contact-form {
   display: -ms-grid;
   display: grid;
@@ -11965,9 +11966,36 @@ footer {
   grid-column-gap: 0.625rem;
 }
 
-.contact-form button[type="submit"] {
+.contact-form button[type="submit"], .contact-form input[type="submit"] {
   width: 52%;
   margin: 0 auto;
+}
+
+input.wpcf7-not-valid, textarea.wpcf7-not-valid {
+  border: solid 1px #FF0000;
+}
+
+div.wpcf7-response-output {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1.125rem;
+}
+
+div.wpcf7-validation-errors {
+  color: #FF0000;
+}
+
+div.wpcf7-mail-sent-ok {
+  color: #398F14;
+}
+
+div.wpcf7-mail-sent-ng {
+  color: #FF0000;
+}
+
+div.wpcf7-spam-blocked {
+  color: #FFA500;
 }
 
 /************************************************
@@ -12631,6 +12659,7 @@ footer {
   display: -ms-grid;
   display: grid;
   grid-row-gap: 5rem;
+      grid-template-areas: "custom-wp-theme" "calculator" "simple-website" "wp-theme-customize";
 }
 
 @media (min-width: 576px) {
@@ -12651,6 +12680,7 @@ footer {
   grid-area: title;
   z-index: 10;
   max-width: 20rem;
+  color: #404040;
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
@@ -12707,6 +12737,9 @@ footer {
 }
 
 .custom-wp-theme {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: custom-wp-theme;
   position: relative;
   -ms-grid-rows: [img-shadow-start] 5rem [title-start] auto [title-end description-start] auto [description-end link-start img-start] auto [link-end] 1fr [img-shadow-end] 4.5rem [img-end];
       grid-template-rows: [img-shadow-start] 5rem [title-start] auto [title-end description-start] auto [description-end link-start img-start] auto [link-end] 1fr [img-shadow-end] 4.5rem [img-end];
@@ -12823,6 +12856,9 @@ footer {
 }
 
 .calculator {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: calculator;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: [title-start] auto [title-end img-start] 1fr [img-shadow-start] 1fr [description-start] auto [description-end link-start] auto [link-end] 1fr [img-shadow-end] 1fr [img-end];
@@ -12880,6 +12916,9 @@ footer {
 }
 
 .simple-website {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: simple-website;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: [title-start] auto [title-end img-start] 2rem [img-shadow-start] 1fr [img-end] 2rem [img-shadow-end] 1.5rem [description-start] auto [description-end link-start] auto [link-end];
@@ -12963,6 +13002,9 @@ footer {
 }
 
 .wp-theme-customize {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: wp-theme-customize;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: [title-start] auto [title-end img-start] 2rem [img-shadow-start] 1fr [img-end] 2rem [img-shadow-end] 1.5rem [description-start] auto [description-end link-start] auto [link-end];

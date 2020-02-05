@@ -116,64 +116,34 @@ get_header();
       <section>
         <div id="portfolio" class="portfolio section-wrap">
           <h2 class="section-title text-center">PORTFOLIO</h2>
-          <div class="portfolio-container">
-            <!-- --------------- Custom WordPress theme --------------- -->
-            <div class="portfolio-item custom-wp-theme">
-              <div class="img-shadow"></div>
-              <h3 class="portfolio-title"><a href="#">MY FIRST CUSTOM WORDPRESS THEME</a></h3>
-              <p class="portfolio-description">This is the first custom WordPress theme I built from scratch. It's fully responsive, so it looks and works great on all devices.</p>
-              <a href="#" class="link demo-link"><span></span>DEMO</a>
-              <div class="portfolio-img-container">
-                <div class="content">
-                  <a href="#">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/custom_wordpress_theme_on_macbook.png" alt="custom wordpress theme">
-                  </a>
-                </div>
-              </div>
+    
+          <?php
+          $args = array(
+            'category_name' => 'work'
+          );
+          $portfolio = new WP_Query($args);
+          if ($portfolio->have_posts()):
+          ?>
+
+            <div class="portfolio-container">
+
+              <?php
+              // Start of WP_Query Loop
+              while ($portfolio->have_posts()):
+                $portfolio->the_post();
+              
+                get_template_part('template-parts/content', 'portfolio');
+              
+              // End of WP_Query Loop              
+              endwhile;
+              ?>
+
             </div>
-            <!-- --------------- Calculator --------------- -->
-            <div class="portfolio-item calculator">
-              <div class="img-shadow"></div>
-              <h3 class="portfolio-title"><a href="#">CALCULATOR CREATED WITH JAVASCRIPT</a></h3>
-              <p class="portfolio-description">This is a simple calculator created with HTML, CSS and JavaScript. I tried this project to have more JavaScript skills.</p>
-              <a href="#" class="link demo-link"><span></span>DEMO</a>
-              <div class="portfolio-img-container">
-                <div class="content">
-                  <a href="#">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/calculator.png" alt="calculator">
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- --------------- Simple website --------------- -->
-            <div class="portfolio-item simple-website">
-              <div class="img-shadow"></div>
-                <h3 class="portfolio-title"><a href="#">SIMPLE WEBSITE FOR CODE TRAINING</a></h3>
-                <p class="portfolio-description">I built this website to improve my coding skills and start learning web design. Note that this design is not what I created. It's from Adobe XD tutorials.</p>
-                <a href="#" class="link demo-link"><span></span>DEMO</a>
-              <div class="portfolio-img-container">
-                <div class="content">
-                  <a href="#">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/kotohajime_home.png" alt="simple website">
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- --------------- WordPress theme customization --------------- -->
-            <div class="portfolio-item wp-theme-customize">
-              <div class="img-shadow"></div>
-                <h3 class="portfolio-title"><a href="#">WORDPRESS THEME CUSTOMIZATION</a></h3>
-                <p class="portfolio-description">This is a website I created for an association by customizing an existing WordPress theme. I also made it a multilingual site with plugins.</p>
-                <a href="#" class="link demo-link"><span></span>DEMO</a>
-              <div class="portfolio-img-container">
-                <div class="content">
-                  <a href="#">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/theme_customization.png" alt="wordpress theme customization">
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+
+          <?php
+          endif;
+          wp_reset_postdata();
+          ?>
         </div>
       </section>
     <!-- -------------------- Contact -------------------- -->
@@ -182,7 +152,8 @@ get_header();
           <div class="container">
             <h2 class="section-title text-center">CONTACT ME</h2>
             <div class="contact-form-wrap">
-              <form action="" method="post" class="contact-form">
+              <?php echo do_shortcode('[contact-form-7 id="38" title="Contact form 1" html_class="contact-form"]'); ?>
+              <!-- <form action="" method="post" class="contact-form">
                 <div class="form-name">
                   <input type="text" name="first-name" id="" placeholder="First Name">
                   <input type="text" name="last-name" id="" placeholder="Last Name">
@@ -191,7 +162,7 @@ get_header();
                 <input type="text" name="subject" id="" placeholder="Subject">
                 <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
                 <button type="submit" class="btn btn-dark-cyan">SEND</button>
-              </form>
+              </form> -->
             </div>
 
           </div>

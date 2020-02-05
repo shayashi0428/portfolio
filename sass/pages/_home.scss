@@ -421,6 +421,11 @@
 .portfolio-container {
   display: grid;
   grid-row-gap: 5rem;
+  grid-template-areas: 
+    "custom-wp-theme"
+    "calculator"
+    "simple-website"
+    "wp-theme-customize";
 
   @include media-breakpoint-up(sm) {
     grid-row-gap: 6rem;
@@ -436,7 +441,7 @@
   grid-area: title;
   z-index: 10;
   max-width: 20rem;
-  @include font-style(null, 1.5rem, bold, 2rem);
+  @include font-style($iron-gray, 1.5rem, bold, 2rem);
   text-transform: uppercase;
 
   @include media-breakpoint-up(md) {
@@ -471,6 +476,7 @@
 // ---------- Custom WordPress theme ---------- //
 
 .custom-wp-theme {
+  grid-area: custom-wp-theme;
   position: relative;
   grid-template-rows: [img-shadow-start] 5rem [title-start] auto [title-end description-start] auto [description-end link-start img-start] auto [link-end] 1fr [img-shadow-end] 4.5rem [img-end];
   @include grid-columns([#{$content-start}] 2fr [img-shadow-start img-start] 5fr [#{$content-end}] 1fr, xs, sm, null, [img-shadow-end img-end]);
@@ -530,6 +536,7 @@
 // ---------- Calculator ---------- //
 
 .calculator {
+  grid-area: calculator;
   display: grid;
   grid-template-rows: [title-start] auto [title-end img-start] 1fr [img-shadow-start] 1fr $content-wo-title 1fr [img-shadow-end] 1fr [img-end];
   @include grid-columns([title-start img-start img-shadow-start] 4fr [img-end] 0.5fr [#{$content-wo-title-start}] 0.5fr [img-shadow-end] 3fr [#{$content-wo-title-end}], xs, sm);
@@ -549,6 +556,7 @@
 // ---------- Simple website ---------- //
 
 .simple-website {
+  grid-area: simple-website;
   display: grid;
   grid-template-rows: [title-start] auto [title-end img-start] 2rem [img-shadow-start] 1fr [img-end] 2rem [img-shadow-end] 1.5rem $content-wo-title;
   @include grid-columns(1fr [#{$content-wo-title-start}] 1fr [img-shadow-start] 1fr [title-start img-start] 4fr [img-shadow-end] 1fr [title-end img-end #{$content-wo-title-end}], xs, xs);
@@ -591,6 +599,7 @@
 // ---------- WordPress theme customization ---------- //
 
 .wp-theme-customize {
+  grid-area: wp-theme-customize;
   display: grid;
   grid-template-rows: [title-start] auto [title-end img-start] 2rem [img-shadow-start] 1fr [img-end] 2rem [img-shadow-end] 1.5rem $content-wo-title;
   @include grid-columns([#{$content-start} img-start] 1fr [img-shadow-start] 5fr [title-end img-end] 1fr [img-shadow-end #{$content-wo-title-end}] 1fr, xs, xs);
