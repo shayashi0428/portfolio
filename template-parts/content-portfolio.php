@@ -35,7 +35,7 @@ $demo_link = post_custom('demo-link');
 
   <!-- Demo links -->
   <?php if ($demo_link): ?>
-    <a href="<?php echo esc_url(home_url($demo_link)); ?>" target="_blank" class="link demo-link"><span></span>DEMO</a>
+    <a href="<?php echo esc_url(home_url($demo_link)); ?>" target="_blank" class="link demo-link link-animation"><span></span>DEMO</a>
   <?php endif; ?>
 
   <!-- Thumbnails -->

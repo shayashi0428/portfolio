@@ -2,6 +2,7 @@
   Variables
 ************************************/
 /* --------------- Colors --------------- */
+/* --------------- Typography --------------- */
 /* --------------- Box shadow --------------- */
 /* --------------- Grid layouts --------------- */
 /* --------------- Header navigation --------------- */
@@ -11720,11 +11721,6 @@ a:hover {
           animation: fadeinX 1s forwards;
 }
 
-.fadeinY {
-  -webkit-animation: fadeinY .8s forwards;
-          animation: fadeinY .8s forwards;
-}
-
 @-webkit-keyframes fadeinX {
   from {
     opacity: 0;
@@ -11751,6 +11747,11 @@ a:hover {
   }
 }
 
+.fadeinY {
+  -webkit-animation: fadeinY .8s forwards;
+          animation: fadeinY .8s forwards;
+}
+
 @-webkit-keyframes fadeinY {
   from {
     opacity: 0;
@@ -11774,6 +11775,33 @@ a:hover {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+.link-animation {
+  -webkit-animation: link-animation .6s ease-in-out forwards alternate infinite;
+          animation: link-animation .6s ease-in-out forwards alternate infinite;
+}
+
+@-webkit-keyframes link-animation {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+}
+
+@keyframes link-animation {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
   }
 }
 
@@ -12013,6 +12041,7 @@ div.wpcf7-spam-blocked {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 4rem;
+  letter-spacing: 0.025em;
 }
 
 @media (min-width: 768px) {
@@ -12072,6 +12101,10 @@ div.wpcf7-spam-blocked {
     right: 0;
     bottom: 0;
   }
+}
+
+.hero-wrapper .content {
+  height: 100%;
 }
 
 .hero-area {
@@ -12145,13 +12178,14 @@ div.wpcf7-spam-blocked {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 0.625rem;
+  letter-spacing: 0.05rem;
   opacity: 0;
 }
 
 @media (min-width: 768px) {
   .hero-content .hero-title {
     color: #404040;
-    font-size: 6.25vw;
+    font-size: 6vw;
     font-weight: bold;
     margin-bottom: 0.625rem;
   }
@@ -12160,7 +12194,7 @@ div.wpcf7-spam-blocked {
 @media (min-width: 992px) {
   .hero-content .hero-title {
     color: #404040;
-    font-size: 4rem;
+    font-size: 3.875rem;
     font-weight: bold;
     margin-bottom: 1.25rem;
   }
@@ -12453,6 +12487,7 @@ div.wpcf7-spam-blocked {
   opacity: 0;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  will-change: left;
 }
 
 @media (max-width: 416px) {
@@ -12481,7 +12516,10 @@ div.wpcf7-spam-blocked {
 }
 
 .progress .progress-bar {
+  width: 0;
   background-color: #006589;
+  opacity: 0;
+  will-change: width;
 }
 
 .progress-animation .progress-bar {
@@ -12490,25 +12528,27 @@ div.wpcf7-spam-blocked {
 }
 
 .progress-animation .skill-value {
-  -webkit-animation: skillValue 1.1s ease-in-out forwards;
-          animation: skillValue 1.1s ease-in-out forwards;
+  -webkit-animation: skillValue 1.4s ease-in-out forwards;
+          animation: skillValue 1.4s ease-in-out forwards;
 }
 
 @-webkit-keyframes progressBar {
   from {
     width: 0%;
+    opacity: 1;
   }
   to {
-    width: 100%;
+    opacity: 1;
   }
 }
 
 @keyframes progressBar {
   from {
     width: 0%;
+    opacity: 1;
   }
   to {
-    width: 100%;
+    opacity: 1;
   }
 }
 
@@ -12520,7 +12560,6 @@ div.wpcf7-spam-blocked {
     opacity: 0;
   }
   100% {
-    left: '';
     opacity: 1;
   }
 }
@@ -12533,7 +12572,6 @@ div.wpcf7-spam-blocked {
     opacity: 0;
   }
   100% {
-    left: '';
     opacity: 1;
   }
 }
@@ -12647,6 +12685,7 @@ div.wpcf7-spam-blocked {
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  letter-spacing: 0.025em;
 }
 
 .service-item .service-description {
@@ -12679,11 +12718,12 @@ div.wpcf7-spam-blocked {
   -ms-grid-column: 2;
   grid-area: title;
   z-index: 10;
-  max-width: 20rem;
+  max-width: 21rem;
   color: #404040;
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
+  letter-spacing: 0.025em;
   text-transform: uppercase;
 }
 
@@ -12716,8 +12756,9 @@ div.wpcf7-spam-blocked {
 }
 
 .demo-link {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
   grid-area: link;
-  -ms-grid-column-align: start;
       justify-self: start;
 }
 
@@ -12979,7 +13020,7 @@ div.wpcf7-spam-blocked {
 .simple-website .portfolio-title {
   -ms-grid-column-align: end;
       justify-self: end;
-  min-width: 15.5rem;
+  min-width: 16rem;
 }
 
 @media (min-width: 576px) {
@@ -13101,7 +13142,7 @@ div.wpcf7-spam-blocked {
   display: grid;
   -ms-grid-columns: 0 1fr 0;
       grid-template-columns: 0 1fr 0;
-      grid-template-areas: ". title   ." ". meta    ." ". img     ." ". content .";
+      grid-template-areas: ". title   ." ". meta    ." ". img     ." ". content ." ". link    .";
 }
 
 @media (min-width: 768px) {
@@ -13215,5 +13256,13 @@ div.wpcf7-spam-blocked {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: content;
+}
+
+.entry-link {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: link;
+  -ms-grid-column-align: start;
+      justify-self: start;
 }
 /*# sourceMappingURL=main.css.map */

@@ -13,18 +13,20 @@ get_header();
     <main role="main">
     <!-- -------------------- Hero area -------------------- -->
       <div class="hero-wrapper">
-        <div class="hero-area content">
-          <div class="hero-img-shadow img-shadow"></div>
-          <div class="hero-bg-img"></div>
-          <div id="hero-img" class="hero-img-container">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/capybara.png" alt="capybara" class="hero-img">
+        <div class="content">
+          <div class="hero-area">
+            <div class="hero-img-shadow img-shadow"></div>
+            <div class="hero-bg-img"></div>
+            <div id="hero-img" class="hero-img-container">
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/capybara.png" alt="capybara" class="hero-img">
+            </div>
+            <div id="hero-content" class="hero-content">
+              <h1 class="hero-title"><span>Hello, I'm </span>SACHIE <br>HAYASHI</h1>
+              <p class="hero-sub-title">Front End Web Developer</p>
+              <a href="#portfolio" id="portfolio-link" class="btn btn-outline-dark-cyan">SEE PORTFOLIO</a>
+            </div>
+            <div class="hero-sideline"></div>
           </div>
-          <div id="hero-content" class="hero-content">
-            <h1 class="hero-title"><span>Hello, I'm</span>SACHIE <br>HAYASHI</h1>
-            <p class="hero-sub-title">Front End Web Developer</p>
-            <a href="#portfolio" id="portfolio-link" class="btn btn-outline-dark-cyan">SEE PORTFOLIO</a>
-          </div>
-          <div class="hero-sideline"></div>
         </div>
       </div>
     <!-- -------------------- About -------------------- -->
@@ -40,42 +42,37 @@ get_header();
           <div class="personal-skills">
             <div class="skill-wrap">
               <span class="skill-title">HTML & CSS</span>
-              <span class="skill-value" style="left: 75%">75%</span>
+              <span class="skill-value" style="left: 75%;">75%</span>
               <div class="progress">
-                <div class="progress-bar" style="max-width: 75%;">
-                </div>
+                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="skill-wrap">
               <span class="skill-title">Sass</span>
-              <span class="skill-value" style="left: 70%">70%</span>
+              <span class="skill-value" style="left: 70%;">70%</span>
               <div class="progress">
-                <div class="progress-bar" style="max-width: 70%;">
-                </div>
+                <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="skill-wrap">
               <span class="skill-title">JavaScript</span>
-              <span class="skill-value" style="left: 60%">60%</span>
+              <span class="skill-value" style="left: 60%;">60%</span>
               <div class="progress">
-                <div class="progress-bar" style="max-width: 60%;">
-                </div>
+                <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="skill-wrap">
               <span class="skill-title">PHP</span>
-              <span class="skill-value" style="left: 50%">50%</span>
+              <span class="skill-value" style="left: 50%;">50%</span>
               <div class="progress">
-                <div class="progress-bar" style="max-width: 50%;">
-                </div>
+                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="skill-wrap">
               <span class="skill-title">Web Design</span>
-              <span class="skill-value" style="left: 40%">40%</span>
+              <span class="skill-value" style="left: 40%;">40%</span>
               <div class="progress">
-                <div class="progress-bar" style="max-width: 40%;">
-                </div>
+                <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>

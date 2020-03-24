@@ -15,7 +15,8 @@
   ". title   ."
   ". meta    ."
   ". img     ."
-  ". content .";
+  ". content ."
+  ". link    .";
   
   @include media-breakpoint-up(md) {
     grid-template-columns: 1fr 6fr 1fr;
@@ -77,4 +78,9 @@
 
 .entry-content, .page-content {
   grid-area: content;
+}
+
+.entry-link {
+  grid-area: link;
+  justify-self: start;
 }

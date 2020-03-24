@@ -62,10 +62,6 @@ a {
   animation: fadeinX 1s forwards;
 }
 
-.fadeinY {
-  animation: fadeinY .8s forwards;
-}
-
 @keyframes fadeinX {
   from {
     opacity: 0;
@@ -77,6 +73,10 @@ a {
   }
 }
 
+.fadeinY {
+  animation: fadeinY .8s forwards;
+}
+
 @keyframes fadeinY {
   from {
     opacity: 0;
@@ -85,6 +85,19 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.link-animation {
+  animation: link-animation .6s ease-in-out forwards alternate infinite;
+}
+
+@keyframes link-animation {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(3px);
   }
 }
 

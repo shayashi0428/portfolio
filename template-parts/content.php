@@ -60,7 +60,7 @@
   $demo_link = post_custom('demo-link');
   if ($demo_link):
   ?>
-    <a href="<?php echo esc_url(home_url($demo_link));?>" target="_blank" class="link"><span></span>DEMO</a>
+    <a href="<?php echo esc_url(home_url($demo_link));?>" target="_blank" class="link entry-link"><span></span>DEMO</a>
   <?php endif; ?>
 
 </article>

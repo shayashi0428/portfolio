@@ -9,7 +9,6 @@
 
 ?>
 
-    <!-- -------------------- Footer -------------------- -->
     <footer>
       <div class="container footer-container">
         <div class="copyright">
