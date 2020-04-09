@@ -25,6 +25,11 @@
               <i class="fab fa-instagram"></i>
             </a>
           </li>
+          <li>
+            <a href="https://github.com/sachie-hayashi" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
         </ul>
       </div>
     </footer>
