@@ -10,7 +10,8 @@
     $breakpoint: nth(map-keys($side-widths), $i);
     $side-width: nth(map-values($side-widths), $i);
 
-    @if $i == 1 { // index 1 = xs
+    @if $i == 1 {
+      // index 1 = xs
       grid-template-columns: $firstline-name $side-width $main-col $side-width $endline-name;
     } @else {
       @include media-breakpoint-up($breakpoint) {
@@ -42,7 +43,7 @@
     &:hover {
       #{$property}: lighten($color, 20%);
     }
-  
+
     &:active {
       #{$property}: lighten($color, 30%);
     }
@@ -50,17 +51,17 @@
     &:hover {
       opacity: 0.7;
     }
-  
+
     &:active {
       opacity: 0.6;
-    }    
+    }
   }
 }
 
 @mixin imgs($width: 100%, $height: 100%, $object-fit: cover) {
   width: $width;
   height: $height;
-  object-fit: $object-fit
+  object-fit: $object-fit;
 }
 
 @mixin aspect-ratio($width: 16, $height: 9) {
@@ -74,6 +75,6 @@
   }
 
   > .content {
-    @include position(absolute, 0, 0, 0, 0)
+    @include position(absolute, 0, 0, 0, 0);
   }
 }

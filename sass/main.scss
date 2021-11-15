@@ -1,13 +1,14 @@
-@import "abstracts/variables";
-@import "abstracts/mixins";
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
 
-@import "vendors-extensions/bootstrap_custom";
+@import 'vendors-extensions/bootstrap_custom';
 
-@import "base/base.scss";
+@import 'base/base.scss';
 
-@import "layout/header";
-@import "layout/footer";
-@import "layout/forms";
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/forms';
 
-@import "pages/home";
-@import "pages/pages";
+@import 'pages/home';
+@import 'pages/pages';
+@import 'pages/portfolio_temporary';
