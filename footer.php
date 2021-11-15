@@ -9,8 +9,7 @@
 
 ?>
 
-    <!-- <footer> -->
-    <footer class="<?php echo esc_attr( is_page( 'portfolio' ) ? 'd-none' : '' ) ; ?>">
+    <footer>
       <div class="container footer-container">
         <div class="copyright">
           <p class="text-white">© 2020 Sachie Hayashi. <br>All rights reserved</p>

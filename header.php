@@ -20,8 +20,7 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class('base-grid'); ?>>
-    <!-- <header> -->
-    <header class="<?php echo esc_attr( is_page( 'portfolio' ) ? 'd-none' : '' ) ; ?>">
+    <header>
     <!-- -------------------- Navigation -------------------- -->
       <nav id="header-nav" class="navbar">
         <div id="nav-toggle" class="nav-toggle">
